@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :group_tasks
 
   resources :group_tasks, only: [:show] do
+    resources :tasks, only: [:new, :create]
   end
 
 
