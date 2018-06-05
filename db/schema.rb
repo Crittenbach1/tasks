@@ -12,6 +12,19 @@
 
 ActiveRecord::Schema.define(version: 2018_06_05_221433) do
 
+  create_table "group_tasks", force: :cascade do |t|
+    t.string "name"
+    t.boolean "status", default: false
+    t.string "due_date"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "name"
+    t.boolean "status", default: false
+    t.integer "user_id"
+    t.integer "group_task_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
