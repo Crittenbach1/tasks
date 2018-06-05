@@ -1,1 +1,5 @@
 <h1> <%= @group_task.name %> </h1>
+
+<br>
+
+<%= link_to 'Add Task to This Group Task', new_group_task_task_path(@group_task), { :class=>"button" } %>
