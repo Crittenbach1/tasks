@@ -19,6 +19,10 @@ class GroupTasksController < ApplicationController
     end
   end
 
+  def show
+    @group_task = GroupTask.find_by(id: params[:id])
+  end
+
 
   private
     def group_task_params
