@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
+   has_many :tasks
+   has_many :group_tasks, through: :tasks
 
 
     def self.new_with_session(params, session)
