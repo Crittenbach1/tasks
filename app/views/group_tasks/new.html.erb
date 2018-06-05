@@ -1,0 +1,17 @@
+<h1>New Group Task</h1>
+
+
+<%= form_for @group_task do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %> <br>
+  <%= f.label :due_date %>
+  <%= f.text_field :due_date %> <br>
+
+  <%= content_tag(:t, "Add a new task") %>
+  <%= f.fields_for @group_task.tasks.build do |p| %>
+    <%= t.label :name %>
+    <%= t.text_field :name %> <br>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
