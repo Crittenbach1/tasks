@@ -1,3 +1,7 @@
 <h1>Group Tasks</h1>
 
 <%= link_to 'Create a New Group Task', new_group_task_path, { :class=>"button" } %>
+
+<% @group_tasks.each do |gt| %>
+<h3> <%= link_to "#{gt.name}", group_task_path(gt), { :class=>"button" } %> </h3>
+<% end %>
