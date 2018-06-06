@@ -3,3 +3,9 @@
 <br>
 
 <%= link_to 'Add Task to This Group Task', new_group_task_task_path(@group_task), { :class=>"button" } %>
+
+<ul>
+  <% @tasks.each do |t| %>
+    <li><%= t.name %></li>
+  <%end%>
+</ul>

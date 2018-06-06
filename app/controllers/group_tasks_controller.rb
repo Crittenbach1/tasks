@@ -8,6 +8,7 @@ class GroupTasksController < ApplicationController
 
   def new
     @group_task = GroupTask.new
+    @task = Task.new
   end
 
   def create
@@ -21,12 +22,13 @@ class GroupTasksController < ApplicationController
 
   def show
     @group_task = GroupTask.find_by(id: params[:id])
+    @tasks = @group_task.tasks
   end
 
 
   private
     def group_task_params
-      params.require(:group_task).permit(:name, :due_date, :task => [:user_id, :name])
+      params.require(:group_task).permit(:name, :due_date, :task => [:name, :user_id])
     end
 
 end
