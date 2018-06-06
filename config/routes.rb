@@ -4,12 +4,16 @@ Rails.application.routes.draw do
 
   root to: "tasks#index"
 
-  resources :group_tasks
+  resources :group_tasks, :users
 
   resources :tasks, only: [:edit, :update, :destroy]
 
   resources :group_tasks, only: [:show] do
     resources :tasks, only: [:new, :create]
+  end
+
+  resources :users, only: [:index] do
+    resources :tasks, only: [:index]
   end
 
 
