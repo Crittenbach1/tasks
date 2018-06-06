@@ -9,4 +9,17 @@ class GroupTask < ApplicationRecord
       end
   end
 
+  def self.group_task_progress(group_task)
+    @all = group_task.tasks.length
+    @num_completed = 0
+    group_task.tasks.each do |t|
+      if t.status == true
+        @num_completed += 1
+      end
+    end
+    @message = "#{@num_completed} out of #{@all} completed"
+
+    @message
+  end
+
 end

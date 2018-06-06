@@ -4,4 +4,5 @@
 
 <% @group_tasks.each do |gt| %>
 <h3> <%= link_to "#{gt.name}", group_task_path(gt), { :class=>"button" } %> </h3>
+<h3> <%= GroupTask.group_task_progress(gt) %> </h3>
 <% end %>
