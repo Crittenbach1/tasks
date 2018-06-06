@@ -3,5 +3,6 @@
 <% else %>
   <%= link_to "Home", root_path, method: :get %>
   <%= link_to "Group Tasks", group_tasks_path, method: :get %>
+  <%= link_to "Users", users_path, method: :get %>
   <%= link_to "Logout", destroy_user_session_path, method: :delete %>
 <% end %>
