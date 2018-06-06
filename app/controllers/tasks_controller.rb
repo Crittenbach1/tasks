@@ -3,10 +3,10 @@ class TasksController < ApplicationController
 
 
     def index
-      @my_tasks = []
+      @user_tasks = []
       Task.all.each do |t|
-         if t.user_id == current_user.id
-            @my_tasks << t
+         if t.user_id == params[:user_id]
+            @user_tasks << t
          end
       end
     end

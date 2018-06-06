@@ -1,11 +1,12 @@
-<h1>Welcome <%= current_user.email %> </h1>
 
-<h3>My Tasks</h3>
+
 
 <ul>
-  <% @my_tasks.each do |t| %>
+  <% @user_tasks.each do |t| %>
     <li><%= t.name %></li>
     <%= Task.status(t) %>
-    <%= button_to "Edit", edit_task_path(t.id), method: :get %>
+    <%if t.user_id == current_user.id%>
+      <%= button_to "Edit", edit_task_path(t.id), method: :get %>
+    <%end%>
   <%end%>
 </ul>
