@@ -31,6 +31,22 @@ class TasksController < ApplicationController
       end
     end
 
+
+    def edit
+      @task = Task.find(params[:id])
+    end
+
+    def update
+     @task = Task.find(params[:id])
+     if @task.status == false
+        @task.status = true
+     else
+       @task.status = false
+     end
+     @task.save
+     redirect_to root_path
+    end
+    
       private
         def task_params
           params.require(:task).permit(:name, :user_id)
