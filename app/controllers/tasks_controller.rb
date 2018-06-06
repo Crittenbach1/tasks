@@ -16,12 +16,18 @@ class TasksController < ApplicationController
     end
 
     def create
-
+      @group_task = GroupTask.find_by(id: params[:group_task_id])
+      @task = @group_task.tasks.build(task_params)
+      if @task.save
+        redirect_to group_task_path(@group_task)
+      else
+        render :new
+      end
     end
 
       private
         def task_params
-
+          params.require(:task).permit(:name, :user_id)
         end
 
 end
