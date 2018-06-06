@@ -5,6 +5,7 @@
 <ul>
   <% @my_tasks.each do |t| %>
     <li><%= t.name %></li>
+    <%= Task.status(t) %>
     <%= button_to "Edit", edit_task_path(t.id), method: :get %>
   <%end%>
 </ul>
