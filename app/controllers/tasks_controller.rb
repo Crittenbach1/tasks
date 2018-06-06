@@ -21,6 +21,7 @@ class TasksController < ApplicationController
     end
 
     def create
+      binding.pry
       @group_task = GroupTask.find_by(id: params[:group_task_id])
       @task = @group_task.tasks.build(task_params)
       if @task.save
