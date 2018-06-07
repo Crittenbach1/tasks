@@ -1,5 +1,8 @@
 <h2>Form for a new task for <%= @group_task.name%>:</h2>
 
+<%= render partial: 'layouts/valid_errors', locals: {object: @task}%>
+
+
 <%= form_for @task, url: group_task_tasks_path(@group_task) do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.label :name %>
