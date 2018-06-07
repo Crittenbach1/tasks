@@ -1,6 +1,9 @@
 class GroupTask < ApplicationRecord
   has_many :tasks
   has_many :users, through: :tasks
+  validates :name, presence: true
+  validates :due_date, presence: true
+  validates :due_date, :format => /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/, :message => "^Date must be in the following format: mm/dd/yyyy"
 
   def task=(task_attributes)
     if task_attributes[:name].present?
