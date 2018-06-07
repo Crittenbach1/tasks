@@ -5,7 +5,7 @@ class TasksController < ApplicationController
     def index
       @user_tasks = []
       Task.all.each do |t|
-         if t.user_id == params[:user_id]
+         if t.user_id == params[:user_id].to_i
             @user_tasks << t
          end
       end
@@ -21,7 +21,6 @@ class TasksController < ApplicationController
     end
 
     def create
-      binding.pry
       @group_task = GroupTask.find_by(id: params[:group_task_id])
       @task = @group_task.tasks.build(task_params)
       if @task.save
