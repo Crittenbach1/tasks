@@ -1,22 +1,36 @@
-Specs:
-- [x] Using Ruby on Rails for the project
-- [x] Include at least one has_many relationship (GroupTask has_many Tasks, User has_many Tasks)
-- [x] Include at least one belongs_to relationship (Task belongs_to User, Task belongs_to GroupTask)
-- [x] Include at least one has_many through relationship (GroupTask has_many Users through: Tasks, User has_many GroupTasks through: Tasks)
-- [x] The "through" part of the has_many through includes at least one user submittable attribute (Name, Status)
-- [x] Include reasonable validations for simple model objects (User, GroupTask, Task)
-- [x] Include a class level ActiveRecord scope method (GroupTask.group_task_progress, Task.status)
-- [x] Include a nested form writing to an associated model using a custom attribute writer (URL: GroupTasks/new, Task)
-- [x] Include signup (Devise)
-- [x] Include login (Devise)
-- [x] Include logout (Devise)
-- [x] Include third party signup/login (OmniAuth)
-- [x] Include nested resource show or index (URL: users/2/tasks)
-- [x] Include nested resource "new" form (URL: /group_tasks/1/tasks/new)
-- [x] Include form display of validation errors (URLs: /group_tasks/1/tasks/new, /group_tasks/new)
+# Group Tasks Collaboration App
 
-Confirm:
-- [x] The application is pretty DRY
-- [x] Limited logic in controllers
-- [x] Views use helper methods if appropriate
-- [x] Views use partials if appropriate
+## Rails portfolio project
+
+This Ruby on Rails application allows a user to create a group task and add tasks to them.  The Group task has a due date.  Each task is assigned to the user who created it, can be marked complete or incomplete and can only be edited by the it's user.
+
+## Install instructions
+
+Run `bundle install` to install all required gems. Then run `rails s` and click on a link provided in your terminal.
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/Crittenbach1/tasks This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## License
+
+    Copyright (c) 2017 Cynthia Rittenbach
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+    LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+    OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
