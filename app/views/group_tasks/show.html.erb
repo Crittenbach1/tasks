@@ -9,7 +9,9 @@
 <ul>
   <% @tasks.each do |t| %>
     <li><%= t.name %></li>
-    
+    User: <%= Task.find_user(t.user_id).email %>
+    <br>
+    <%= Task.status(t) %>
 
   <%end%>
 </ul>

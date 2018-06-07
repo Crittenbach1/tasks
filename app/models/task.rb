@@ -12,4 +12,9 @@ class Task < ApplicationRecord
      end
   end
 
+  def self.find_user(user_id)
+    User.find_by(id: user_id)
+  end
+
+
 end
