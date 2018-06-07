@@ -1,11 +1,14 @@
 <h1>New Group Task</h1>
 
+<%= render partial: 'layouts/valid_errors', locals: {object: @group_task}%>
 
 <%= form_for @group_task do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %> <br>
   <%= f.label :due_date %>
   <%= f.text_field :due_date %> <br>
+
+  <%= render partial: 'layouts/valid_errors', locals: {object: @group_task.tasks.build}%>
 
   <%= content_tag(:t, "Add a new task") %>
   <%= f.fields_for @group_task.tasks.build do |t| %>
