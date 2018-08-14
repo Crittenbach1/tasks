@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root to: "users#index"
 
+  get 'users/most_tasks', :to => 'users#most_tasks'
+
   resources :group_tasks, :users
 
   resources :tasks, only: [:edit, :update, :destroy]
