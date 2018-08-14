@@ -5,5 +5,9 @@ class UsersController < ApplicationController
        @users = User.all
      end
 
+     def most_tasks
+       @users = User.all
+     end
+
 
 end
