@@ -24,13 +24,12 @@ class User < ApplicationRecord
     end
 
     def self.most_tasks
-      user_with_most_tasks = nil
-      User.each do |u|
+      user_with_most_tasks = User.all[0]
+      User.all.each do |u|
         if user_with_most_tasks.tasks.count < u.tasks.count
           user_with_most_tasks = u
         end
       end
-      binding.pry
       return user_with_most_tasks
     end
 
